@@ -1,7 +1,7 @@
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BlogLayout } from "src/component";
 
 type Response = {
@@ -11,7 +11,7 @@ type Response = {
 };
 
 const Root = () => {
-  const [keyword, setKeyword] = useState<string | null>(null);
+  const [keyword, setKeyword] = useState<string>("beef");
   const [preKeyword, setPreKeyword] = useState<string | null>(null);
   const [start, setStart] = useState(1);
   const [isLoadContinue, setIsLoadContinue] = useState(false);
@@ -46,6 +46,11 @@ const Root = () => {
     }
   };
 
+  useEffect(() => {
+    handleSerch();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <BlogLayout>
       <ul>
@@ -64,7 +69,7 @@ const Root = () => {
                 key={index}
                 className="my-4 bg-white rounded border-2 border-red-500"
               >
-                <Link href={"/"}>
+                <Link href={item.urls.pc}>
                   <a>
                     <div className="grid grid-cols-10">
                       <div className="col-span-2 self-center">
