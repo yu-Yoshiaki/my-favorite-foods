@@ -1,17 +1,14 @@
-// @ts-check
-
 /**
  * @type {import('next').NextConfig}
  **/
 const nextConfig = {
-  rewrites: async () => {
-    return [{ source: "/", destination: "/root" }];
-  },
   i18n: { locales: ["ja"], defaultLocale: "ja" },
-  // future: { strictPostcssConfiguration: true },
-  pageExtensions: ["page.tsx", "page.ts"],
+  future: { strictPostcssConfiguration: true },
   reactStrictMode: true,
   poweredByHeader: false,
+  images: {
+    domains: ["imgfp.hotp.jp"],
+  },
 };
 
 module.exports = nextConfig;

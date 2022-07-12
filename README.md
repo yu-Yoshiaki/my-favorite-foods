@@ -1,4 +1,4 @@
-# Next.js starter template.
+# Next.js starter template
 
 - Next.js
 - TypeScript
@@ -7,5 +7,6 @@
 - Jest
 - Tailwind CSS
 
-## yarn upgrade 
-yarn upgrade-interactive 
+## yarn upgrade
+
+yarn upgrade-interactive
